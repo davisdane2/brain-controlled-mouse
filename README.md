@@ -1,2 +1,2 @@
 # brain-controlled-mouse
-data recording mouse control for training eeg brainwave computer mouse movement
+data recording computer mouse control and training classifier model for eeg brainwave controlled computer mouse
