@@ -11,10 +11,11 @@ A Python proof-of-concept for translating brain-computer interface (BCI) signals
 ## How It Works
 
 1. OpenBCI Cyton streams raw 24-bit EEG samples at 250 Hz over USB serial
-2. A Python script reads the stream via the `openbci-python` library (`pip install openbci-python`)
-3. Each `OpenBCISample` contains 8 channels of raw voltage data — scaled to microvolts using the board's gain factor
-4. A trained classifier maps EEG signal patterns to directional commands (`left`, `right`, `up`, `down`)
-5. Commands are passed to `pynput` or `pyautogui` to move the system mouse
+2. **[BrainFlow](https://brainflow.readthedocs.io/en/stable/index.html)** (`pip install brainflow`) handles board connection, noise filtering, and band power extraction out of the box
+3. Alpha/beta band power features per channel are fed into a custom directional classifier (`left`, `right`, `up`, `down`)
+4. Commands are passed to `pynput` to move the system mouse
+
+See `Brainflow_Calibration/Overview.md` for details on what BrainFlow provides vs. what we build.
 
 ## Roadmap - Control a YouTube Video (Left,Right,Up,Down, Play, Pause, Next)
 
